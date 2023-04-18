@@ -41,7 +41,10 @@
 </script>
 
 <div class="container">
-    <div class="instrument">{instrument}</div>
+    <div class="instrument">
+        {instrument}
+        <img src="/{instrument} (custom).png" alt="{instrument}" width="60px">
+    </div>
     <div class="tuner">
         <div class="note">
             <div class="normal">
@@ -71,7 +74,7 @@
         {#if isListening}
             <button class="listenActionButton" on:click={stop}>Stop</button>
         {:else}
-            <button class="listenActionButton" on:click={start}>Start</button>
+            <button class="listenActionButton" on:click={() => {alert("Code yourself 😑")}}>Start</button>
         {/if}
     </div>
     <div class="barContainer">
@@ -83,19 +86,11 @@
 
 
 
-    .back{
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 10px;
-        cursor: pointer;
-    }
     .meter {
         position: fixed;
-        left: 0;
-        right: 0;
+        left: 50%;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translate(-50%, -50%);
         width: 400px;
         height: 33%;
     }
@@ -188,7 +183,7 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
-        width: min(100vw, 500px);
+        width: 100vw;
     }
 
     .barContainer {
@@ -231,6 +226,13 @@
         padding: 10px;
         width: 100%;
         text-align: right;
+    }
+
+    .instrument img{
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        z-index: -1;
     }
 
     .tuner {
