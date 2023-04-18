@@ -6,6 +6,10 @@
 
     let instruments = ['Guitar', 'Ukulele', 'Bass', 'Chromatic'];
     let selectedInstrument;
+
+    function selectedInatrumentDefault() {
+        selectedInstrument = 'Not Selected';
+    }
     
     onMount(() => {
         //set the selected instrument to the first instrument in the list
@@ -28,7 +32,7 @@
     </div>
 {:else if selectedInstrument && selectedInstrument != 'Not Selected'}
     <div in:fly={{x: 100}}>
-        <Tuner instrument="{selectedInstrument}"/>
+        <Tuner instrument="{selectedInstrument}" callback={selectedInatrumentDefault}/>
     </div>
 {/if}
 

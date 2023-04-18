@@ -25,19 +25,3 @@ body{
 	background-color: #0b1d37;
 	overflow: hidden;
 }
-
-.meter-scale {
-	width: 1px;
-	height: 100%;
-	transform-origin: bottom;
-	transition: transform 0.2s;
-	box-sizing: border-box;
-	border-top: 10px solid;
-	position: absolute;
-	right: 50%;
-}
-
-.meter-scale-strong {
-	width: 2px;
-	border-top-width: 20px;
-}
