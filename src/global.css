@@ -1,6 +1,6 @@
 @font-face {
 	font-family: Now;
-	src: url('./now-web.woff2');
+	src: url('/now-web.woff2');
 }
 
 *{
